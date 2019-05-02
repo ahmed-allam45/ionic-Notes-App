@@ -1,4 +1,60 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+.show
+{
+    text-align: center;
+}
+.show i{
+    padding: 5px;
+    color: #00000080;
+    
+}
+.card{
+    padding: 0;
+    display: inline-block;
+    transform: scale(0.95);
+}
+.card p{
+    font-size: 11px
+}
+.card i{
+    position: absolute;
+    right: 13%;
+    top: 19%;
+    color: #fabc30;
+    font-size: 18px
+}
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    left: 0;
+    height: 50px;
+}
+.footer .col-6{
+    padding: 0;
+    display: inline-block;
+    text-align: center
+}
+.btn-link {
+    font-weight: 900;
+    color: #fabc30;
+    text-decoration: none;
+    padding: 13px;
+    width: 100%;
+}
+.footer .add_new{
+    position: absolute;
+    left: 42%;
+    top: -32px;
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    color:#fff;
+    z-index: 999999999;
+}
+.save{
+  background-color: #fabc30;
+  color: #fff;
+  width: 100%;
+  margin: 35px 0px;
 }

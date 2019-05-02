@@ -1,27 +1,55 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Note App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
+
+
+
+
+<!-- Default Refresher -->
+
+
+<!-- Custom Refresher Content -->
+
+<ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+  <div class="show" >
+      <i (click)="shouldShow = !shouldShow" class="fas fa-th-large"></i>
+      <!-- <i class="fas fa-bars"></i> -->
+  </div>
+
+  <div class="no-data text-center" *ngIf="students.length == 0">
+    <p>There is no Note added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/home">Add note</button>
+  </div>
+  
+  <div [ngClass]="{'col-12': shouldShow, 'col-6': !shouldShow}" class="card col-6 animated zoomInLeft" [ngStyle]="{'background-color': rec.bgcolor}" *ngFor="let rec of students">
+    <div class="card-body">
+      <i class="fas fa-times" (click)="deleteEmployee(rec.id)"></i>
+      <h5 class="card-title" [ngStyle]="{'color': rec.color}">{{rec.Title}}</h5>
+      <p class="card-text" [ngStyle]="{'color': rec.color}">{{rec.Description}}</p>
+      <p class="text-muted float-right">{{rec.created_at.date}}</p>
     </div>
-  -->
+  </div>
+
+
+<div class="space-btm"></div>
+
 </ion-content>
+<div class="footer">
+    <div class="col-6"><button type="button" class="btn btn-link">Link</button>
+    </div>
+    <button type="button" class="add_new btn btn-warning" routerLink="/home"><i class="fas fa-plus"></i></button>
+
+    <div class="col-6"><button type="button" class="btn btn-link" disabled>Link</button>
+    </div>
+</div>

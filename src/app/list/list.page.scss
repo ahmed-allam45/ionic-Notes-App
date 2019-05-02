@@ -1,1 +1,67 @@
+.show
+{
+    text-align: center;
+}
+.show i{
+    padding: 5px;
+    color: #00000080;
+    
+}
+.card{
+    padding: 0;
+    // display: inline-block;
+    transform: scale(0.95);
+    float: left;
+}
+.card .card-text{
+    //height: 50px;
+    overflow: hidden;
+}
+.card p{
+    font-size: 11px
+}
+.card i{
+    position: absolute;
+    right: 13%;
+    top: 38px;
+        color: #fabc30;
+    font-size: 18px
+}
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    left: 0;
+    height: 50px;
+    z-index: 9999999999;
+}
+.footer .col-6{
+    padding: 0;
+    display: inline-block;
+    text-align: center
+}
+.btn-link {
+    font-weight: 900;
+    color: #fabc30;
+    text-decoration: none;
+    padding: 13px;
+    width: 100%;
+}
+.footer .add_new{
+    position: absolute;
+    left: 42%;
+    top: -32px;
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    color:#fff;
+    z-index: 999999999;
 
+}
+.space-btm{
+    height: 100px;
+    width: 100%;
+    display: block;
+    float: right;
+}
