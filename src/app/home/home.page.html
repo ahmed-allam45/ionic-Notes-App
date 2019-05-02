@@ -10,7 +10,6 @@
   </ion-header>
   
   <ion-content padding>
-<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
    
     <ion-item style="display:none">
       <ion-label position="floating">uuid</ion-label>
@@ -19,20 +18,12 @@
 
     <ion-item>
         <ion-label position="floating">Title</ion-label>
-        <ion-input [(ngModel)]="employeeDetails.Title" [ngModelOptions]="{standalone: true}" type="text" name="Title"  #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Title.invalid }" required></ion-input>
-        <div *ngIf="f.submitted && Title.invalid" class="invalid-feedback">
-            <div *ngIf="Title.errors.required">Title is required</div>
-        </div>
+        <ion-input [(ngModel)]="employeeDetails.Title" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
-     
+    
       <ion-item>
           <ion-label position="floating">Description </ion-label>
-          <ion-textarea rows="5" cols="10" [(ngModel)]="employeeDetails.Description" [ngModelOptions]="{standalone: true}" type="text" name="Description"  #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Description.invalid }" required></ion-textarea>
-          
-          <div *ngIf="f.submitted && Description.invalid" class="invalid-feedback">
-              <div *ngIf="Description.errors.required">Description required</div>
-          </div>
-
+          <ion-textarea rows="5" cols="10" [(ngModel)]="employeeDetails.Description" [ngModelOptions]="{standalone: true}"></ion-textarea>
         </ion-item>
           <ion-item>
               <ion-label>color</ion-label>
@@ -43,7 +34,7 @@
             <input type="color" name="favcolor" value="#ffffff" [(ngModel)]="employeeDetails.bgcolor">
           </ion-item>
         
-        <button class="btn btn-warning save">Saving data</button>
+        <button class="btn btn-warning save" (click)="addEmployee()">Saving data</button>
 
     <div class="footer">
         <div class="col-6"><button type="button" class="btn btn-link">Link</button>
@@ -53,58 +44,4 @@
         <div class="col-6"><button type="button" class="btn btn-link" disabled>Link</button>
         </div>
     </div>
-  </form>
-
-
-
-
-
-  <!-- main app container -->
-<!-- <div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <h3>Angular 6 Template-Driven Form Validation</h3>
-                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
-                        <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
-                            <div *ngIf="firstName.errors.required">First Name is required</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
-                        <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                            <div *ngIf="lastName.errors.required">Last Name is required</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
-                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-                            <div *ngIf="email.errors.required">Email is required</div>
-                            <div *ngIf="email.errors.email">Email must be a valid email address</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
-                        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-                            <div *ngIf="password.errors.required">Password is required</div>
-                            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary">Register</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
- -->
-
-
   </ion-content>
